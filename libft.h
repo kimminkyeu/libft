@@ -6,7 +6,7 @@
 /*   By: minkyeki <minkyeki@42SEOUL.KR>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:45:16 by minkyeki          #+#    #+#             */
-/*   Updated: 2022/03/23 00:12:04 by minkyeki         ###   ########.fr       */
+/*   Updated: 2022/03/23 00:16:41 by minkyeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 /* Additional Functions added after libft project */
 
-/* add description */
+/* checks for white-space characters. */
 extern bool		ft_isspace(char c);
 
 /* Check if c is an alphabetic character.
