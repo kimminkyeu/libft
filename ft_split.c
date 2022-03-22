@@ -6,14 +6,12 @@
 /*   By: minkyeki <minkyeki@42SEOUL.KR>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 09:44:06 by minkyeki          #+#    #+#             */
-/*   Updated: 2022/03/22 16:20:46 by minkyeki         ###   ########.fr       */
+/*   Updated: 2022/03/22 23:45:34 by minkyeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdbool.h>
 #include <stdlib.h>
-
-extern void		*ft_calloc(size_t nmemb, size_t bytes);
 
 static size_t	count_word(const char *str, char c)
 {
@@ -61,7 +59,7 @@ static char	*each_word_malloc(const char **word_start, char c)
 
 	cnt = 0;
 	len = get_word_len(*word_start, c);
-	pa_word = ft_calloc(len + 1, sizeof(*pa_word));
+	pa_word = malloc((sizeof(*pa_word) * len) + 1);
 	if (!pa_word)
 		return (NULL);
 	while (cnt < len)
@@ -82,10 +80,13 @@ static void	free_all(char **strs, size_t idx)
 	size_t	i;
 
 	i = 0;
-	while (strs[i] != NULL && i <= idx)
+	while (i <= idx)
 	{
-		free(strs[i]);
-		strs[i] = NULL;
+		if (strs[i] != NULL)
+		{
+			free(strs[i]);
+			strs[i] = NULL;
+		}
 		i++;
 	}
 	free(strs);
@@ -108,7 +109,7 @@ char	**ft_split(char const *s, char c)
 		pa_result[i] = each_word_malloc(&s, c);
 		if (pa_result[i] == NULL)
 		{
-			free_all(pa_result, i - 1);
+			free_all(pa_result, i);
 			return (NULL);
 		}
 		++i;

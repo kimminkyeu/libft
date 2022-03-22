@@ -6,17 +6,17 @@
 /*   By: minkyeki <minkyeki@42SEOUL.KR>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 11:10:06 by minkyeki          #+#    #+#             */
-/*   Updated: 2022/03/22 17:26:11 by minkyeki         ###   ########.fr       */
+/*   Updated: 2022/03/22 23:48:54 by minkyeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include <stdlib.h>
 
 extern size_t	ft_strlen(const char *str);
-extern void		*ft_calloc(size_t nmemb, size_t bytes);
+extern size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize);
 extern char		*ft_strchr(const char *s, int c);
 extern char		*ft_strrchr(const char *s, int c);
-extern size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize);
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -30,7 +30,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		++start_idx;
 	while (ft_strrchr(set, s1[end_idx]) && start_idx < end_idx)
 		--end_idx;
-	pa_str = ft_calloc((end_idx - start_idx + 2), sizeof(*pa_str));
+	pa_str = malloc(sizeof(*pa_str) * (end_idx - start_idx + 2));
 	if (!pa_str)
 		return (NULL);
 	ft_strlcpy(pa_str, &s1[start_idx], end_idx - start_idx + 2);

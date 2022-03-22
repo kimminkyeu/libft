@@ -6,14 +6,14 @@
 /*   By: minkyeki <minkyeki@42SEOUL.KR>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 12:14:05 by minkyeki          #+#    #+#             */
-/*   Updated: 2022/03/22 16:01:41 by minkyeki         ###   ########.fr       */
+/*   Updated: 2022/03/22 23:47:55 by minkyeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include <stdlib.h>
 
 extern size_t	ft_strlen(const char *str);
-extern void		*ft_calloc(size_t count, size_t size);
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -22,7 +22,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 
 	len = ft_strlen(s);
-	pa_result = ft_calloc((len + 1), sizeof(*pa_result));
+	pa_result = malloc(sizeof(*pa_result) * (len + 1));
 	if (!pa_result)
 		return (NULL);
 	i = 0;

@@ -6,14 +6,14 @@
 /*   By: minkyeki <minkyeki@42SEOUL.KR>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 19:28:13 by minkyeki          #+#    #+#             */
-/*   Updated: 2022/03/22 15:59:45 by minkyeki         ###   ########.fr       */
+/*   Updated: 2022/03/22 23:46:34 by minkyeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include <stdlib.h>
 
 extern size_t	ft_strlen(const char *str);
-extern void		*ft_calloc(size_t count, size_t size);
 
 char	*ft_strdup(const char *s1)
 {
@@ -21,7 +21,7 @@ char	*ft_strdup(const char *s1)
 	char	*tmp;
 
 	size = ft_strlen(s1);
-	tmp = ft_calloc((size + 1), sizeof(*tmp));
+	tmp = malloc(sizeof(*tmp) * (size + 1));
 	if (!tmp)
 		return (NULL);
 	while (size > 0)

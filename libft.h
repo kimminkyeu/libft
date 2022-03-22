@@ -6,7 +6,7 @@
 /*   By: minkyeki <minkyeki@42SEOUL.KR>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:45:16 by minkyeki          #+#    #+#             */
-/*   Updated: 2022/03/22 16:12:16 by minkyeki         ###   ########.fr       */
+/*   Updated: 2022/03/23 00:12:04 by minkyeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,8 +108,6 @@ extern int		ft_atoi(const char *str);
 
 /* Allocates memory for an array of count elements of size bytes each.
  * Returns a pointer to the allocated memory, which is set to zero. 
- * If the multiplication of count and size would result in integer 
- * overflow, then ft_calloc() sets errno to ENOMEM and return NULL.*/
 extern void		*ft_calloc(size_t nmemb, size_t bytes);
 
 /* Return a pointer to a new string which is a duplicate of the string s1. */
