@@ -6,7 +6,7 @@
 /*   By: minkyeki <minkyeki@42SEOUL.KR>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:45:16 by minkyeki          #+#    #+#             */
-/*   Updated: 2022/04/03 10:47:23 by minkyeki         ###   ########.fr       */
+/*   Updated: 2022/04/11 21:43:25 by minkyeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,15 @@
 # include <stddef.h>
 # include <stdbool.h>
 
-/* Additional Functions added after libft project */
+/* NOTE : Additional Functions added after the project -------------*/
 
-/* checks for white-space characters. */
+/* Get number length. works for only positive number */
+extern size_t	ft_nbrlen(int num_pos);
+
+/* Checks for white-space characters. */
 extern bool		ft_isspace(char c);
+
+/* NOTE : Original Libft functions --------------------------------- */
 
 /* Check if c is an alphabetic character.
  * it is equivalent to (isupper(c) || islower(c)).*/
