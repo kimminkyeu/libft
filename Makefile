@@ -6,7 +6,7 @@
 #    By: minkyeki <minkyeki@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/16 15:31:26 by minkyeki          #+#    #+#              #
-#    Updated: 2022/04/11 21:44:03 by minkyeki         ###   ########.fr        #
+#    Updated: 2022/04/12 14:56:01 by minkyeki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,8 @@ SRCS 			= ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 				  ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strrchr.c \
 				  ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c
 
-SRCS2 			= ft_isspace.c ft_nbrlen.c
+SRCS2 			= ft_isspace.c ft_nbrlen.c ft_putnbr_uint_fd.c ft_nbrlen_uint.c \
+				  ft_convert_nbr_base_malloc.c
 
 SRCS_BONUS 		= ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c \
 				  ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c

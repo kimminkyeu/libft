@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr_uint_fd.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minkyeki <minkyeki@42SEOUL.KR>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 14:24:53 by minkyeki          #+#    #+#             */
-/*   Updated: 2022/04/11 22:31:38 by minkyeki         ###   ########.fr       */
+/*   Updated: 2022/04/11 22:41:12 by minkyeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,27 +25,20 @@ static int	ft_pow(unsigned int num, int power)
 	return (result);
 }
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_uint_fd(unsigned int n, int fd)
 {
 	size_t			nbr_len;
 	char			digit;
 	unsigned int	divider;
-	unsigned int	n_tmp;
 
 	if (fd < 0)
 		return ;
-	n_tmp = n;
-	if (n < 0)
-	{
-		n_tmp = -n;
-		write(fd, "-", 1);
-	}
-	nbr_len = ft_nbrlen(n_tmp);
+	nbr_len = ft_nbrlen_uint(n);
 	while (nbr_len > 0)
 	{
 		divider = ft_pow(10, nbr_len - 1);
-		digit = (n_tmp / divider) + '0';
-		n_tmp %= divider;
+		digit = (n / divider) + '0';
+		n %= divider;
 		nbr_len--;
 		write(fd, &digit, 1);
 	}

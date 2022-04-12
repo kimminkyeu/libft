@@ -6,7 +6,7 @@
 /*   By: minkyeki <minkyeki@42SEOUL.KR>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:45:16 by minkyeki          #+#    #+#             */
-/*   Updated: 2022/04/11 21:43:25 by minkyeki         ###   ########.fr       */
+/*   Updated: 2022/04/12 14:57:30 by minkyeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,15 @@
 # include <stdbool.h>
 
 /* NOTE : Additional Functions added after the project -------------*/
+
+/* Convert number to input base, returns allocated result*/
+extern char		*ft_convert_nbr_base_malloc(int nb, char *base);
+
+/* Get unsigned number length. */
+extern size_t	ft_nbrlen_uint(unsigned int num_pos);
+
+/* Print only unsigned integer */
+extern void		ft_putnbr_uint_fd(unsigned int n, int fd);
 
 /* Get number length. works for only positive number */
 extern size_t	ft_nbrlen(int num_pos);
