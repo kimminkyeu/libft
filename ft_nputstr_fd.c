@@ -6,7 +6,7 @@
 /*   By: minkyeki <minkyeki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 20:33:21 by minkyeki          #+#    #+#             */
-/*   Updated: 2022/04/12 20:33:33 by minkyeki         ###   ########.fr       */
+/*   Updated: 2022/04/12 20:40:39 by minkyeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,3 @@ void	ft_nputstr_fd(const char *string, int fd, size_t n)
 		idx += writed_bytes;
 	}
 }
-
