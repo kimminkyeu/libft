@@ -6,7 +6,7 @@
 /*   By: minkyeki <minkyeki@42SEOUL.KR>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 14:24:53 by minkyeki          #+#    #+#             */
-/*   Updated: 2022/04/12 16:14:22 by minkyeki         ###   ########.fr       */
+/*   Updated: 2022/04/12 18:01:55 by minkyeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,12 @@ void	ft_putnbr_fd(int n, int fd)
 	unsigned int	divider;
 	unsigned int	n_tmp;
 
-	if (fd < 0)
-		return ;
 	n_tmp = n;
+	if (n == -2147483648)
+	{
+		write(fd, "-2147483648", 11);
+		return ;
+	}
 	if (n < 0)
 	{
 		n_tmp = -n;
