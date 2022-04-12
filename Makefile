@@ -6,7 +6,7 @@
 #    By: minkyeki <minkyeki@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/16 15:31:26 by minkyeki          #+#    #+#              #
-#    Updated: 2022/04/12 14:56:01 by minkyeki         ###   ########.fr        #
+#    Updated: 2022/04/12 16:18:15 by minkyeki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,9 @@ NAME			= libft.a
 
 CC				= gcc
 
-CFLAGS			= -Werror -Wextra -Wall
+# -I option으로 헤더의 위치가 바뀌더라도 .c파일 내부에서 경로를 바꿀 필요 없음. 
+INCLUDE			= ../include
+CFLAGS			= -Werror -Wextra -Wall -I
 
 SRCS 			= ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 				  ft_isascii.c ft_isdigit.c ft_isprint.c ft_itoa.c ft_memchr.c \
@@ -47,7 +49,7 @@ ${NAME}: ${OBJS_RESULT}
 	ar rcs ${NAME} $^
 
 .c.o:
-	${CC} ${CFLAGS} -c $^ -o $@
+	${CC} ${CFLAGS} ${INCLUDE} -c $^ -o $@
 
 bonus:
 	@make WITH_BONUS=1
