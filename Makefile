@@ -6,60 +6,98 @@
 #    By: minkyeki <minkyeki@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/16 15:31:26 by minkyeki          #+#    #+#              #
-#    Updated: 2022/04/12 20:39:39 by minkyeki         ###   ########.fr        #
+#    Updated: 2022/04/14 16:42:40 by minkyeki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			= libft.a
 
 CC				= gcc
-
-# -I option으로 헤더의 위치가 바뀌더라도 .c파일 내부에서 경로를 바꿀 필요 없음. 
-INCLUDE			= ../include
 CFLAGS			= -Werror -Wextra -Wall -I
 
-SRCS 			= ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
-				  ft_isascii.c ft_isdigit.c ft_isprint.c ft_itoa.c ft_memchr.c \
-				  ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c ft_putchar_fd.c \
-				  ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c ft_split.c ft_strchr.c \
-				  ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c \
-				  ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strrchr.c \
-				  ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c
+# -I option으로 헤더의 위치가 바뀌더라도 .c파일 내부에서 경로를 바꿀 필요 없음. 
+INCLUDE			= include
+SRC_DIR		= src/
+OBJ_DIR			= obj/
 
-SRCS2 			= ft_isspace.c ft_nbrlen.c ft_putnbr_uint_fd.c ft_nbrlen_uint.c \
-				  ft_convert_nbr_base_malloc.c ft_nputstr_fd.c
+RM				= rm -f
+AR				= ar rcs
 
-SRCS_BONUS 		= ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c \
-				  ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c
+SRC_FILES 		= ft_atoi ft_bzero ft_calloc ft_isalnum ft_isalpha \
+				  ft_isascii ft_isdigit ft_isprint ft_itoa ft_memchr \
+				  ft_memcmp ft_memcpy ft_memmove ft_memset ft_putchar_fd \
+				  ft_putendl_fd ft_putnbr_fd ft_putstr_fd ft_split ft_strchr \
+				  ft_strdup ft_striteri ft_strjoin ft_strlcat ft_strlcpy \
+				  ft_strlen ft_strmapi ft_strncmp ft_strnstr ft_strrchr \
+				  ft_strtrim ft_substr ft_tolower ft_toupper
 
-OBJS 			= ${SRCS:.c=.o}
-OBJS2 			= ${SRCS2:.c=.o}
-OBJS_MANDATORY 	= ${OBJS} ${OBJS2}
-OBJS_BONUS 		= ${SRCS_BONUS:.c=.o}
+SRC2_FILES		= ft_isspace ft_nbrlen ft_putnbr_uint_fd ft_nbrlen_uint \
+				  ft_convert_nbr_base_malloc ft_nputstr_fd
 
+
+SRC_BONUS_FILES	= ft_lstadd_back ft_lstadd_front ft_lstclear ft_lstdelone \
+				  ft_lstiter ft_lstlast ft_lstmap ft_lstnew ft_lstsize
+
+SRC 			= $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
+OBJ 			= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
+
+SRC2 			= $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC2_FILES)))
+OBJ2 			= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC2_FILES)))
+
+SRC_BONUS 		= $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_BONUS_FILES)))
+OBJ_BONUS 		= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_BONUS_FILES)))
+
+OBJ_MANDATORY 	= ${OBJ} ${OBJ2}
+
+
+# Keep makefile from relink
 ifdef WITH_BONUS
-	OBJS_RESULT = ${OBJS_MANDATORY} ${OBJS_BONUS}
+	OBJ_RESULT = ${OBJ_MANDATORY} $(OBJ_BONUS)
 else
-	OBJS_RESULT = ${OBJS_MANDATORY}
+	OBJ_RESULT = $(OBJ_MANDATORY)
 endif
 
-all: ${NAME}
+OBJ_MKDIR		= create_dir
 
-${NAME}: ${OBJS_RESULT}
-	ar rcs ${NAME} $^
 
-.c.o:
-	${CC} ${CFLAGS} ${INCLUDE} -c $^ -o $@
+# Colors
+DEF_COLOR = \033[0;39m
+GRAY = \033[0;90m
+RED = \033[0;91m
+GREEN = \033[0;92m
+YELLOW = \033[0;93m
+BLUE = \033[0;94m
+MAGENTA = \033[0;95m
+CYAN = \033[0;96m
+WHITE = \033[0;97m
+
+
+# Rules 
+all: $(NAME)
+
+$(NAME): $(OBJ_RESULT)
+	@$(AR) $(NAME) $^
+	@echo "$(GREEN)Libft compile finished.$(DEF_COLOR)"
+
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(OBJ_MKDIR)
+	@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
+	@echo "$(GRAY)Compiling... \t$< $(DEF_COLOR)"
+
+$(OBJ_MKDIR):
+	@mkdir -p $(OBJ_DIR)
 
 bonus:
 	@make WITH_BONUS=1
 
 clean:
-	rm -f ${OBJS} ${OBJS2} ${OBJS_BONUS}
+	@${RM} -r ${OBJ_DIR}
+	@echo "$(BLUE)Libft obj files has been deleted.$(DEF_COLOR)"
 
 fclean: clean
-	rm -f ${NAME}
+	@${RM} ${NAME}
+	@echo "$(CYAN)Libft archive files has been deleted.$(DEF_COLOR)"
 
 re: fclean all
+	@echo "$(GREEN)Cleaned and rebuilt everything.$(DEF_COLOR)"
 
 .PHONY: all clean fclean re bonus
