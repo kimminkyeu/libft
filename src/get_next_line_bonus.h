@@ -6,13 +6,14 @@
 /*   By: minkyeki <minkyeki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 17:58:37 by minkyeki          #+#    #+#             */
-/*   Updated: 2022/04/04 16:19:03 by minkyeki         ###   ########.fr       */
+/*   Updated: 2022/04/15 16:33:37 by minkyeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_BONUS_H
 # define GET_NEXT_LINE_BONUS_H
 
+# include <stdlib.h>
 # include <sys/types.h>
 # include <limits.h>
 

@@ -6,12 +6,11 @@
 /*   By: minkyeki <minkyeki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 17:57:42 by minkyeki          #+#    #+#             */
-/*   Updated: 2022/04/04 16:16:15 by minkyeki         ###   ########.fr       */
+/*   Updated: 2022/04/15 16:35:22 by minkyeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdlib.h>
 #include <stdbool.h>
 #include "get_next_line_bonus.h"
 

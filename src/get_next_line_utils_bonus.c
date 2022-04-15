@@ -6,11 +6,10 @@
 /*   By: minkyeki <minkyeki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 18:03:00 by minkyeki          #+#    #+#             */
-/*   Updated: 2022/04/04 16:20:01 by minkyeki         ###   ########.fr       */
+/*   Updated: 2022/04/15 16:33:16 by minkyeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "get_next_line_bonus.h"
 
 void	*memcpy_gnl(void *dst, const void *src, size_t n)

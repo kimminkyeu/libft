@@ -6,14 +6,14 @@
 /*   By: minkyeki <minkyeki@42SEOUL.KR>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:45:16 by minkyeki          #+#    #+#             */
-/*   Updated: 2022/04/15 16:08:31 by minkyeki         ###   ########.fr       */
+/*   Updated: 2022/04/15 16:30:32 by minkyeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stddef.h>
+# include <stdlib.h>
 # include <stdbool.h>
 
 /*-------------------------------------------------

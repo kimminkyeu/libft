@@ -6,11 +6,10 @@
 /*   By: minkyeki <minkyeki@42SEOUL.KR>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 17:20:47 by minkyeki          #+#    #+#             */
-/*   Updated: 2022/03/16 17:54:31 by minkyeki         ###   ########.fr       */
+/*   Updated: 2022/04/15 16:32:05 by minkyeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 t_list	*ft_lstnew(void *content)
