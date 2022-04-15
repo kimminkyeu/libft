@@ -6,7 +6,7 @@
 /*   By: minkyeki <minkyeki@42SEOUL.KR>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:45:16 by minkyeki          #+#    #+#             */
-/*   Updated: 2022/04/14 10:18:10 by minkyeki         ###   ########.fr       */
+/*   Updated: 2022/04/15 16:08:31 by minkyeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@
 /*-------------------------------------------------
  | Additional Functions added after libft project |
  -------------------------------------------------*/
+
+/* Returns a line read from a file descriptor. 
+ * returns NULL if there is nothing else to read, or an error occurred.
+(+supports multiple filedesciptor) */
+extern char		*get_next_line(int fd);
 
 /* Print max n characters of string. */
 extern void		ft_nputstr_fd(const char *string, int fd, size_t n);
