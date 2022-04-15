@@ -6,7 +6,7 @@
 #    By: minkyeki <minkyeki@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/16 15:31:26 by minkyeki          #+#    #+#              #
-#    Updated: 2022/04/15 16:21:08 by minkyeki         ###   ########.fr        #
+#    Updated: 2022/04/15 16:22:06 by minkyeki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,7 @@ OBJ_MANDATORY   = ${OBJ} ${OBJ2}
 
 # Keep makefile from relink
 ifdef WITH_BONUS
-     OBJ_RESULT = ${OBJ_MANDATORY} $(OBJ_BONUS)
+     OBJ_RESULT = $(OBJ_MANDATORY) $(OBJ_BONUS)
 else
      OBJ_RESULT = $(OBJ_MANDATORY)
 endif
