@@ -6,7 +6,7 @@
 /*   By: minkyeki <minkyeki@42SEOUL.KR>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:45:16 by minkyeki          #+#    #+#             */
-/*   Updated: 2022/04/24 18:56:24 by minkyeki         ###   ########.fr       */
+/*   Updated: 2022/04/24 19:00:31 by minkyeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ extern t_darray	*darray_map_malloc(t_darray *arr, void *(*f)(void *));
  * ==========================================================================*/
 
 /* ----------------------------
- *  Converts the initial portion of the string pointed by str to int
+ * * Converts the initial portion of the string pointed by str to int
 representation.*/
 extern int		ft_atoi_base(char *str, char *base);
 
