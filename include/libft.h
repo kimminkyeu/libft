@@ -6,7 +6,7 @@
 /*   By: minkyeki <minkyeki@42SEOUL.KR>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:45:16 by minkyeki          #+#    #+#             */
-/*   Updated: 2022/04/24 17:22:07 by minkyeki         ###   ########.fr       */
+/*   Updated: 2022/04/24 18:56:24 by minkyeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 /* ==========================================================================*
  * |                                                                         |
- * |  * Implemantion of C++ STL std::vector.                                 |
+ * |  * Implemantion of C++ STL std::arrtor.                                 |
  * |  * Data type is void**, so it is suitable of storing pointers.          |
  * |-------------------------------------------------------------------------|
  * |                                                                         |
@@ -45,11 +45,11 @@ extern t_darray	*new_darray_malloc(size_t init_capacity);
 /* ----------------------------
  * * Free every elements of darray, (= delete data), 
  * leaving the container with a size of 0. (capacity doesn't change) */
-extern void		clear_darray(t_darray *vec);
+extern void		clear_darray(t_darray *arr);
 
 /* ----------------------------
  * * Return true(1) if darray is empty, else return false(0) */
-extern bool		darray_is_empty(t_darray *vec);
+extern bool		darray_is_empty(t_darray *arr);
 
 /* ----------------------------
  * * Requests that the darray capacity be at least enough 
@@ -60,22 +60,22 @@ extern bool		darray_is_empty(t_darray *vec);
  * * This function has no effect on the darray size and cannot 
  * alter its elements. 
  * --> NOTE : Returns NULL on error! */
-extern void		*darray_reserve(t_darray *vec, size_t new_capacity);
+extern void		*darray_reserve(t_darray *arr, size_t new_capacity);
 
 /* ----------------------------
  * * Add data to the end --> input for various data*/
-extern void		darray_push_back(t_darray *vec, void *data);
+extern void		darray_push_back(t_darray *arr, void *data);
 
 /* ----------------------------
  * * Remove data to the end */
-extern void		darray_pop_back(t_darray *vec);
+extern void		darray_pop_back(t_darray *arr);
 
 /* ----------------------------
  * * Requests the container to reduce its capacity to fit its size. 
  * * This may cause a reallocation, but has no effect on the 
  * darray size and cannot alter its elements. 
  * --> NOTE : Returns NULL on error!! */
-extern void		*darray_shrink_to_fit(t_darray *vec);
+extern void		*darray_shrink_to_fit(t_darray *arr);
 
 /* ----------------------------
  * * Iterates the D-Array and applies the function ’f’ 
@@ -102,6 +102,11 @@ extern t_darray	*darray_map_malloc(t_darray *arr, void *(*f)(void *));
  * |  NOTE(1)   no description                                               |
  * |                                                                         |
  * ==========================================================================*/
+
+/* ----------------------------
+ *  Converts the initial portion of the string pointed by str to int
+representation.*/
+extern int		ft_atoi_base(char *str, char *base);
 
 /* ----------------------------
  * * Returns a line read from a file descriptor. 
