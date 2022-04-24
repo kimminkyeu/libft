@@ -6,7 +6,7 @@
 #    By: minkyeki <minkyeki@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/16 15:31:26 by minkyeki          #+#    #+#              #
-#    Updated: 2022/04/23 21:14:33 by minkyeki         ###   ########.fr        #
+#    Updated: 2022/04/24 17:23:37 by minkyeki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ SRC_FILES       = ft_atoi ft_bzero ft_calloc ft_isalnum ft_isalpha \
 SRC2_FILES      = ft_isspace ft_nbrlen ft_putnbr_uint_fd ft_nbrlen_uint \
                   ft_convert_nbr_base_malloc ft_nputstr_fd \
                   get_next_line_bonus get_next_line_utils_bonus \
-				  ft_split_all
+				  darray_create darray_modify darray_iterate
 
 SRC_BONUS_FILES = ft_lstadd_back ft_lstadd_front ft_lstclear ft_lstdelone \
                   ft_lstiter ft_lstlast ft_lstmap ft_lstnew ft_lstsize
