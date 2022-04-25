@@ -6,7 +6,7 @@
 /*   By: minkyeki <minkyeki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 16:46:20 by minkyeki          #+#    #+#             */
-/*   Updated: 2022/04/24 17:11:41 by minkyeki         ###   ########.fr       */
+/*   Updated: 2022/04/25 11:41:12 by minkyeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,18 @@ t_darray	*darray_map_malloc(t_darray *arr, void *(*f)(void *))
 		}
 	}
 	return (new_arr);
+}
+
+bool	darray_is_empty(t_darray *arr)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < arr->size)
+	{
+		if (arr->data[i] != NULL)
+			return (false);
+		++i;
+	}
+	return (true);
 }

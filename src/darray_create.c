@@ -6,7 +6,7 @@
 /*   By: minkyeki <minkyeki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 16:18:56 by minkyeki          #+#    #+#             */
-/*   Updated: 2022/04/24 16:56:06 by minkyeki         ###   ########.fr       */
+/*   Updated: 2022/04/25 11:54:07 by minkyeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,16 @@ t_darray	*new_darray_malloc(size_t init_capacity)
 	return (arr);
 }
 
-void	clear_darray(t_darray *arr)
+void	delete_darray(t_darray **arr)
+{
+	darray_reset(*arr);
+	free((*arr)->data);
+	(*arr)->data = NULL;
+	free(*arr);
+	*arr = NULL;
+}
+
+void	darray_reset(t_darray *arr)
 {
 	size_t	idx;
 
@@ -45,14 +54,6 @@ void	clear_darray(t_darray *arr)
 	arr->size = 0;
 }
 
-void	*new_data_malloc(size_t init_capacity)
-{
-	void	*data;
-
-	data = malloc(init_capacity * sizeof(size_t));
-	return (data);
-}
-
 void	darray_set_data(t_darray *arr, size_t index, void *data)
 {
 	if (arr->data[index] != NULL)
@@ -60,16 +61,10 @@ void	darray_set_data(t_darray *arr, size_t index, void *data)
 	arr->data[index] = data;
 }
 
-bool	darray_is_empty(t_darray *arr)
+void	*new_data_malloc(size_t init_capacity)
 {
-	size_t	i;
+	void	*data;
 
-	i = 0;
-	while (i < arr->size)
-	{
-		if (arr->data[i] != NULL)
-			return (false);
-		++i;
-	}
-	return (true);
+	data = malloc(init_capacity * sizeof(size_t));
+	return (data);
 }

@@ -6,7 +6,7 @@
 /*   By: minkyeki <minkyeki@42SEOUL.KR>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:45:16 by minkyeki          #+#    #+#             */
-/*   Updated: 2022/04/24 19:00:31 by minkyeki         ###   ########.fr       */
+/*   Updated: 2022/04/25 12:00:27 by minkyeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,12 @@
  * |  * Data type is void**, so it is suitable of storing pointers.          |
  * |-------------------------------------------------------------------------|
  * |                                                                         |
- * |  NOTE(1) if you call darray_clear(), it will free every containing data.|
+ * |  NOTE(1) if you call darray_reset(), it will free every containing data.|
  * |                                                                         |
  * |  NOTE(2) if you call pop_back(), it will free it's last data;           |
+ * |                                                                         |
+ * |  NOTE(3) if you call delete_darray(), it will free everything           | 
+ * |          including the pointer passed to argument;                      |
  * |                                                                         |
  * ==========================================================================*/
 
@@ -36,16 +39,25 @@ typedef struct s_darray {
 	void		**data;
 }	t_darray;
 
-/* ---------------------------- 
- * * Default constructor.
+/* ============================ 
+ * * NOTE : Default Constructor.
  * [ Ex. t_darray *arr = new_darray(20) ];
- * --> NOTE : Returns NULL on error! */
+ * --> Returns NULL on error! */
 extern t_darray	*new_darray_malloc(size_t init_capacity);
 
+/* ============================ 
+ * * NOTE : Default Destructor.
+ * * Frees everything, including pointer passed as argument. 
+ * --> Use this function to delete D-Array! */
+extern void		delete_darray(t_darray **arr_ptr);
+
 /* ----------------------------
- * * Free every elements of darray, (= delete data), 
- * leaving the container with a size of 0. (capacity doesn't change) */
-extern void		clear_darray(t_darray *arr);
+ * * NOTE : Capacity of d-array doesn't change!
+ * * Frees every elements of it's data,
+ * set array size to 0. 
+ * - 
+ * * if you want to set capacity to 0, call darray_shrink_to_fit(). */
+extern void		darray_reset(t_darray *arr);
 
 /* ----------------------------
  * * Return true(1) if darray is empty, else return false(0) */
@@ -59,7 +71,7 @@ extern bool		darray_is_empty(t_darray *arr);
  * and the darray capacity is not affected.
  * * This function has no effect on the darray size and cannot 
  * alter its elements. 
- * --> NOTE : Returns NULL on error! */
+ * --> Returns NULL on error! */
 extern void		*darray_reserve(t_darray *arr, size_t new_capacity);
 
 /* ----------------------------
@@ -74,7 +86,7 @@ extern void		darray_pop_back(t_darray *arr);
  * * Requests the container to reduce its capacity to fit its size. 
  * * This may cause a reallocation, but has no effect on the 
  * darray size and cannot alter its elements. 
- * --> NOTE : Returns NULL on error!! */
+ * --> Returns NULL on error!! */
 extern void		*darray_shrink_to_fit(t_darray *arr);
 
 /* ----------------------------
@@ -90,8 +102,7 @@ extern void		darray_iterate(t_darray *arr, void (*f)(void *));
  * content of each element.
  * * Allocates a new D-Array resulting of the successive 
  * applications of the function ’f’. 
- * --> NOTE : Returns NULL on error!! */
-
+ * --> Returns NULL on error!! */
 extern t_darray	*darray_map_malloc(t_darray *arr, void *(*f)(void *));
 
 /* ==========================================================================*
