@@ -55,3 +55,8 @@ bool	darray_is_empty(t_darray *arr)
 	}
 	return (true);
 }
+
+void    *darray_get_last(t_darray *arr)
+{
+	return (arr->data[arr->size - 1]);
+}

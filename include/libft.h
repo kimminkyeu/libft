@@ -45,7 +45,7 @@ typedef struct s_darray {
  * --> Returns NULL on error! */
 extern t_darray	*new_darray_malloc(size_t init_capacity);
 
-/* ============================ 
+/* ============================
  * * NOTE : Default Destructor.
  * * Frees everything, including pointer passed as argument. 
  * --> Use this function to delete D-Array! */
@@ -58,6 +58,9 @@ extern void		delete_darray(t_darray **arr_ptr);
  * - 
  * * if you want to set capacity to 0, call darray_shrink_to_fit(). */
 extern void		darray_reset(t_darray *arr);
+
+/* Returns last data pointer */
+extern void    *darray_get_last(t_darray *arr);
 
 /* ----------------------------
  * * Return true(1) if darray is empty, else return false(0) */

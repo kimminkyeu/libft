@@ -76,7 +76,7 @@ void	darray_push_back(t_darray *arr, void *data_in)
 	if (arr->size >= arr->capacity)
 	{
 		status = darray_reserve(arr, arr->capacity * 2);
-		if (status != NULL)
+		if (status == NULL)
 			return	;
 	}
 	darray_set_data(arr, arr->size, data_in);

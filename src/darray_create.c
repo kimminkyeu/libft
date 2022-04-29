@@ -13,6 +13,8 @@
 #include <stdlib.h>
 #include "darray.h"
 
+extern void		*ft_calloc(size_t nmemb, size_t bytes);
+
 t_darray	*new_darray_malloc(size_t init_capacity)
 {
 	t_darray	*arr;
@@ -65,6 +67,6 @@ void	*new_data_malloc(size_t init_capacity)
 {
 	void	*data;
 
-	data = malloc(init_capacity * sizeof(size_t));
+	data = ft_calloc(init_capacity, sizeof(size_t));
 	return (data);
 }
