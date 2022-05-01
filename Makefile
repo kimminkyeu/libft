@@ -6,7 +6,7 @@
 #    By: minkyeki <minkyeki@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/16 15:31:26 by minkyeki          #+#    #+#              #
-#    Updated: 2022/05/01 14:01:35 by minkyeki         ###   ########.fr        #
+#    Updated: 2022/05/01 20:59:19 by minkyeki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,20 +32,20 @@ SRC_FILES       = ft_atoi ft_bzero ft_calloc ft_isalnum ft_isalpha \
                   ft_strtrim ft_substr ft_tolower ft_toupper
 
 SRC2_FILES      = ft_isspace ft_nbrlen ft_putnbr_uint_fd ft_nbrlen_uint \
-                  ft_convert_nbr_base_malloc ft_nputstr_fd \
-                  get_next_line_bonus get_next_line_utils_bonus \
-				  darray_create darray_modify darray_iterate \
-				  ft_atoi_base
+                  ft_convert_nbr_base_malloc ft_nputstr_fd ft_atoi_base
+
+SRC3_FILES		= get_next_line_bonus get_next_line_utils_bonus
+
+SRC4_FILES		= ft_printf ft_printf_hex ft_printf_info ft_printf_parse ft_printf_spec1 ft_printf_spec2
+
+SRC5_FILES		= darray_create darray_modify darray_iterate
 
 SRC_BONUS_FILES = ft_lstadd_back ft_lstadd_front ft_lstclear ft_lstdelone \
                   ft_lstiter ft_lstlast ft_lstmap ft_lstnew ft_lstsize
 
 
-SRC             = $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
-OBJ             = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
-
-SRC2            = $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC2_FILES)))
-OBJ2            = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC2_FILES)))
+SRC             = $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES) $(SRC2_FILES) $(SRC3_FILES) $(SRC4_FILES) $(SRC5_FILES)))
+OBJ             = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES) $(SRC2_FILES) $(SRC3_FILES) $(SRC4_FILES) $(SRC5_FILES)))
 
 SRC_BONUS       = $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_BONUS_FILES)))
 OBJ_BONUS       = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_BONUS_FILES)))
@@ -96,13 +96,13 @@ bonus:
 
 clean:
 	@${RM} -r ${OBJ_DIR}
-	@echo "$(BLUE)Libft obj files has been deleted.$(DEF_COLOR)"
+	@echo "$(CYAN)Libft obj files has been deleted.$(DEF_COLOR)"
 
 fclean: clean
 	@${RM} ${NAME}
 	@echo "$(CYAN)Libft archive files has been deleted.$(DEF_COLOR)"
 
 re: fclean all
-	@echo "$(GREEN)Cleaned and rebuilt everything.$(DEF_COLOR)"
+	@echo "$(BLUE)Cleaned and rebuilt everything.$(DEF_COLOR)"
 
 .PHONY: all clean fclean re bonus

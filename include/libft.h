@@ -6,7 +6,7 @@
 /*   By: minkyeki <minkyeki@42SEOUL.KR>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:45:16 by minkyeki          #+#    #+#             */
-/*   Updated: 2022/05/01 14:16:45 by minkyeki         ###   ########.fr       */
+/*   Updated: 2022/05/01 20:58:32 by minkyeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ extern t_darray	*darray_map_malloc(t_darray *arr, void *(*f)(void *));
 
 /* ==========================================================================*
  * |                                                                         |
- * |        * Additional Functions added after LIBFT project                 |
+ * |        * ft_printf function                                             |
  * |-------------------------------------------------------------------------|
  * |                                                                         |
  * |  NOTE(1)   no description                                               |
@@ -118,9 +118,22 @@ extern t_darray	*darray_map_malloc(t_darray *arr, void *(*f)(void *));
  * ==========================================================================*/
 
 /* ----------------------------
+ * * same as printf, but doesn't support float and dditional format specifier */
+extern int		ft_printf(const char *fmt, ...);
+
+/* ----------------------------
  * * Converts the initial portion of the string pointed by str to int
 representation.*/
 extern int		ft_atoi_base(char *str, char *base);
+
+/* ==========================================================================*
+ * |                                                                         |
+ * |        * get_next_line + additional functions                           |
+ * |-------------------------------------------------------------------------|
+ * |                                                                         |
+ * |  NOTE(1)   no description                                               |
+ * |                                                                         |
+ * ==========================================================================*/
 
 /* ----------------------------
  * * Returns a line read from a file descriptor. 
