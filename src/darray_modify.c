@@ -6,7 +6,7 @@
 /*   By: minkyeki <minkyeki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 16:27:38 by minkyeki          #+#    #+#             */
-/*   Updated: 2022/04/28 16:01:18 by minkyeki         ###   ########.fr       */
+/*   Updated: 2022/05/01 14:15:46 by minkyeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	*darray_shrink_to_fit(t_darray *arr)
 
 void	darray_push_back(t_darray *arr, void *data_in)
 {
-	void *status;
+	void	*status;
 
 	if (arr == NULL || data_in == NULL)
 		return ;
@@ -77,7 +77,7 @@ void	darray_push_back(t_darray *arr, void *data_in)
 	{
 		status = darray_reserve(arr, arr->capacity * 2);
 		if (status == NULL)
-			return	;
+			return ;
 	}
 	darray_set_data(arr, arr->size, data_in);
 	(arr->size)++;

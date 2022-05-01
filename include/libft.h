@@ -6,7 +6,7 @@
 /*   By: minkyeki <minkyeki@42SEOUL.KR>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:45:16 by minkyeki          #+#    #+#             */
-/*   Updated: 2022/04/25 12:00:27 by minkyeki         ###   ########.fr       */
+/*   Updated: 2022/05/01 14:16:45 by minkyeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ extern void		delete_darray(t_darray **arr_ptr);
 extern void		darray_reset(t_darray *arr);
 
 /* Returns last data pointer */
-extern void    *darray_get_last(t_darray *arr);
+extern void		*darray_get_last(t_darray *arr);
 
 /* ----------------------------
  * * Return true(1) if darray is empty, else return false(0) */

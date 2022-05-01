@@ -6,7 +6,7 @@
 /*   By: minkyeki <minkyeki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 16:46:20 by minkyeki          #+#    #+#             */
-/*   Updated: 2022/04/28 14:53:41 by minkyeki         ###   ########.fr       */
+/*   Updated: 2022/05/01 14:14:59 by minkyeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ bool	darray_is_empty(t_darray *arr)
 	return (true);
 }
 
-void    *darray_get_last(t_darray *arr)
+void	*darray_get_last(t_darray *arr)
 {
 	return (arr->data[arr->size - 1]);
 }
