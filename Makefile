@@ -6,7 +6,7 @@
 #    By: minkyeki <minkyeki@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/16 15:31:26 by minkyeki          #+#    #+#              #
-#    Updated: 2022/05/01 20:59:19 by minkyeki         ###   ########.fr        #
+#    Updated: 2022/05/02 17:20:08 by minkyeki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ SRC2_FILES      = ft_isspace ft_nbrlen ft_putnbr_uint_fd ft_nbrlen_uint \
 
 SRC3_FILES		= get_next_line_bonus get_next_line_utils_bonus
 
-SRC4_FILES		= ft_printf ft_printf_hex ft_printf_info ft_printf_parse ft_printf_spec1 ft_printf_spec2
+SRC4_FILES		= ft_printf ft_vprintf ft_printf_hex ft_printf_info ft_printf_parse ft_printf_spec1 ft_printf_spec2
 
 SRC5_FILES		= darray_create darray_modify darray_iterate
 

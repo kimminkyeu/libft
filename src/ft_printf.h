@@ -6,7 +6,7 @@
 /*   By: minkyeki <minkyeki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 10:11:25 by minkyeki          #+#    #+#             */
-/*   Updated: 2022/04/14 16:48:55 by minkyeki         ###   ########.fr       */
+/*   Updated: 2022/05/02 17:19:11 by minkyeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ extern int		ft_printf(const char *fmt, ...);
  -------------------------------------------------*/
 extern int		ft_vprintf(const char *fmt, va_list argp);
 /* print string until specifier appears. Returns length of printed characters */
+
 extern size_t	ft_putstr_until(const char *str, char stopper, t_print *_info);
 
 /*-------------------------------------------------

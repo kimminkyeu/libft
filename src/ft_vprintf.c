@@ -6,12 +6,12 @@
 /*   By: kyeu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 10:50:40 by kyeu              #+#    #+#             */
-/*   Updated: 2022/04/14 11:08:10 by minkyeki         ###   ########.fr       */
+/*   Updated: 2022/05/02 17:17:55 by minkyeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "../include/ft_printf.h"
+#include "ft_printf.h"
 
 size_t	ft_putstr_until(const char *str, char stopper, t_print *_info)
 {
