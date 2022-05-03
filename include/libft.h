@@ -6,7 +6,7 @@
 /*   By: minkyeki <minkyeki@42SEOUL.KR>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:45:16 by minkyeki          #+#    #+#             */
-/*   Updated: 2022/05/01 20:58:32 by minkyeki         ###   ########.fr       */
+/*   Updated: 2022/05/03 22:36:12 by minkyeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,8 @@ extern t_darray	*darray_map_malloc(t_darray *arr, void *(*f)(void *));
  * ==========================================================================*/
 
 /* ----------------------------
- * * same as printf, but doesn't support float and dditional format specifier */
+ * * Same as printf.
+ * but doesn't support float and dditional format specifier */
 extern int		ft_printf(const char *fmt, ...);
 
 /* ----------------------------
