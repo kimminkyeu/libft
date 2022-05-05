@@ -6,7 +6,7 @@
 /*   By: minkyeki <minkyeki@42SEOUL.KR>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:45:16 by minkyeki          #+#    #+#             */
-/*   Updated: 2022/05/03 22:36:12 by minkyeki         ###   ########.fr       */
+/*   Updated: 2022/05/05 17:48:10 by minkyeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,21 @@
  * |  * Data type is void**, so it is suitable of storing pointers.          |
  * |-------------------------------------------------------------------------|
  * |                                                                         |
- * |  NOTE(1) if you call darray_reset(), it will free every containing data.|
+ * |  NOTE(1) darray_reset() : free every containing data.                   |
  * |                                                                         |
- * |  NOTE(2) if you call pop_back(), it will free it's last data;           |
+ * |  NOTE(2) darray_pop_back() : it will free it's last containing data.    |
  * |                                                                         |
- * |  NOTE(3) if you call delete_darray(), it will free everything           | 
- * |          including the pointer passed to argument;                      |
+ * |  NOTE(3) delete_darray(), it will free everything                       | 
+ * |          including the pointer passed to argument.                      |
  * |                                                                         |
  * ==========================================================================*/
 
 /* ---------------------------
- * * Type define for D-array (Works as same as Linked list in Libft. */
+ * @Type define for D-array.
+ * . 
+ * - size     : number of pointers filled in **data.
+ * - capacity : total size of it's allocated memory.
+ * - **data   : pointer to array of data(= void *) set. */
 typedef struct s_darray {
 	size_t		size;
 	size_t		capacity;
@@ -40,21 +44,20 @@ typedef struct s_darray {
 }	t_darray;
 
 /* ============================ 
- * * NOTE : Default Constructor.
+ * @Default Constructor.
  * [ Ex. t_darray *arr = new_darray(20) ];
  * --> Returns NULL on error! */
 extern t_darray	*new_darray_malloc(size_t init_capacity);
 
 /* ============================
- * * NOTE : Default Destructor.
+ * @Default Destructor.
  * * Frees everything, including pointer passed as argument. 
  * --> Use this function to delete D-Array! */
 extern void		delete_darray(t_darray **arr_ptr);
 
 /* ----------------------------
  * * NOTE : Capacity of d-array doesn't change!
- * * Frees every elements of it's data,
- * set array size to 0. 
+ * * Frees every elements of it's data, set array size to 0. 
  * - 
  * * if you want to set capacity to 0, call darray_shrink_to_fit(). */
 extern void		darray_reset(t_darray *arr);
@@ -67,50 +70,50 @@ extern void		*darray_get_last(t_darray *arr);
 extern bool		darray_is_empty(t_darray *arr);
 
 /* ----------------------------
- * * Requests that the darray capacity be at least enough 
+ * - Requests that the darray capacity be at least enough 
  * to contain n elements. 
- * * If n is smaller than (or equal to) it's current capacity, 
+ * - If n is smaller than (or equal to) it's current capacity, 
  * the function call does not cause a reallocation 
  * and the darray capacity is not affected.
- * * This function has no effect on the darray size and cannot 
+ * - This function has no effect on the darray size and cannot 
  * alter its elements. 
  * --> Returns NULL on error! */
 extern void		*darray_reserve(t_darray *arr, size_t new_capacity);
 
 /* ----------------------------
- * * Add data to the end --> input for various data*/
-extern void		darray_push_back(t_darray *arr, void *data);
+ * - Add data(void *) to the end. */
+extern void		darray_push_back(t_darray *arr, void *new);
 
 /* ----------------------------
- * * Remove data to the end */
+ * * Remove and free it's last data(void *). */
 extern void		darray_pop_back(t_darray *arr);
 
 /* ----------------------------
- * * Requests the container to reduce its capacity to fit its size. 
- * * This may cause a reallocation, but has no effect on the 
+ * - Requests the container to reduce its capacity to fit its size. 
+ * - This may cause a reallocation, but has no effect on the 
  * darray size and cannot alter its elements. 
  * --> Returns NULL on error!! */
 extern void		*darray_shrink_to_fit(t_darray *arr);
 
 /* ----------------------------
- * * Iterates the D-Array and applies the function ’f’ 
+ * - Iterates the D-Array and applies the function ’f’ 
  * to the content of each element. */
 extern void		darray_iterate(t_darray *arr, void (*f)(void *));
 
 /* ----------------------------
- * * NOTE : new D-Array is auto-shrinked to 
- * original array's size (not capacity)
- * *
- * * Iterates D-Array and applies the function ’f’ to the 
+ * - NOTE : new D-Array is auto-shrinked to 
+ * original array's size (not capacity).
+ * .
+ * - Iterates D-Array and applies the function ’f’ to the 
  * content of each element.
- * * Allocates a new D-Array resulting of the successive 
+ * - Allocates a new D-Array resulting of the successive 
  * applications of the function ’f’. 
  * --> Returns NULL on error!! */
 extern t_darray	*darray_map_malloc(t_darray *arr, void *(*f)(void *));
 
 /* ==========================================================================*
  * |                                                                         |
- * |        * ft_printf function                                             |
+ * |        * ft_printf function + additional function                       |
  * |-------------------------------------------------------------------------|
  * |                                                                         |
  * |  NOTE(1)   no description                                               |
@@ -118,8 +121,8 @@ extern t_darray	*darray_map_malloc(t_darray *arr, void *(*f)(void *));
  * ==========================================================================*/
 
 /* ----------------------------
- * * Same as printf.
- * but doesn't support float and dditional format specifier */
+ * * @PRINTF_MANDATORY
+ * - Doesn't support float and additional format specifier. */
 extern int		ft_printf(const char *fmt, ...);
 
 /* ----------------------------
@@ -137,10 +140,17 @@ extern int		ft_atoi_base(char *str, char *base);
  * ==========================================================================*/
 
 /* ----------------------------
- * * Returns a line read from a file descriptor. 
- * returns NULL if there is nothing else to read, or an error occurred.
-(+supports multiple filedesciptor) */
+ * * @GNL_MANDATORY
+ * - Returns a line read from a single file descriptor. 
+ * - returns NULL if there is nothing else to read, or an error occurred. */
 extern char		*get_next_line(int fd);
+
+/* ----------------------------
+ * * @GNL_BONUS
+ * - Returns a line read from multiplefile descriptors. 
+ * - returns NULL if there is nothing else to read, or an error occurred.
+ *   (+supports multiple filedesciptor) */
+extern char		*get_next_line_multi(int fd);
 
 /* ----------------------------
  * * Print max n characters of string. */

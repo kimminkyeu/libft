@@ -6,7 +6,7 @@
 #    By: minkyeki <minkyeki@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/16 15:31:26 by minkyeki          #+#    #+#              #
-#    Updated: 2022/05/05 15:42:33 by minkyeki         ###   ########.fr        #
+#    Updated: 2022/05/05 15:45:21 by minkyeki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,8 @@ SRC_FILES       = ft_atoi ft_bzero ft_calloc ft_isalnum ft_isalpha \
 SRC2_FILES      = ft_isspace ft_nbrlen ft_putnbr_uint_fd ft_nbrlen_uint \
                   ft_convert_nbr_base_malloc ft_nputstr_fd ft_atoi_base
 
-SRC3_FILES		= get_next_line_bonus get_next_line_utils_bonus
+SRC3_FILES		= get_next_line get_next_line_utils \
+				  get_next_line_bonus get_next_line_utils_bonus
 
 SRC4_FILES		= ft_printf ft_printf_hex ft_printf_info ft_printf_parse ft_printf_spec1 ft_printf_spec2
 
@@ -42,7 +43,6 @@ SRC5_FILES		= darray_create darray_modify darray_iterate
 
 SRC_BONUS_FILES = ft_lstadd_back ft_lstadd_front ft_lstclear ft_lstdelone \
                   ft_lstiter ft_lstlast ft_lstmap ft_lstnew ft_lstsize
-
 
 SRC             = $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES) $(SRC2_FILES) $(SRC3_FILES) $(SRC4_FILES) $(SRC5_FILES)))
 OBJ             = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES) $(SRC2_FILES) $(SRC3_FILES) $(SRC4_FILES) $(SRC5_FILES)))
