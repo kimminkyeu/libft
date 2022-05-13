@@ -6,7 +6,7 @@
 /*   By: minkyeki <minkyeki@42SEOUL.KR>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:45:16 by minkyeki          #+#    #+#             */
-/*   Updated: 2022/05/05 17:48:10 by minkyeki         ###   ########.fr       */
+/*   Updated: 2022/05/13 17:23:45 by minkyeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,22 @@
 
 # include <stdlib.h>
 # include <stdbool.h>
+
+/* ==========================================================================*
+ * |                                                                         |
+ * |        * pipe_x additional function                                     |
+ * |-------------------------------------------------------------------------|
+ * |                                                                         |
+ * |  NOTE(1)   no description                                               |
+ * |                                                                         |
+ * ==========================================================================*/
+
+/* --------------------------------------------
+ * @ Allocate and return joined strings passed as argument.
+ * - Str_num is a total number of strings to join.
+ * - Returns NULL on error.
+ * - ex. ft_strjoin_all(3, str1, str2, str3) */
+extern char		*ft_strjoin_all(size_t str_num, ...);
 
 /* ==========================================================================*
  * |                                                                         |
