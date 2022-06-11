@@ -6,7 +6,7 @@
 /*   By: minkyeki <minkyeki@42SEOUL.KR>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:45:16 by minkyeki          #+#    #+#             */
-/*   Updated: 2022/05/13 17:23:45 by minkyeki         ###   ########.fr       */
+/*   Updated: 2022/06/11 15:32:55 by minkyeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,23 @@
 
 # include <stdlib.h>
 # include <stdbool.h>
+
+/* ==========================================================================*
+ * |                                                                         |
+ * |        * push_swap additional function                                  |
+ * |-------------------------------------------------------------------------|
+ * |                                                                         |
+ * |  NOTE(1)   no description                                               |
+ * |                                                                         |
+ * ==========================================================================*/
+
+/* --------------------------------------------
+ * @ Strong interger format checking.
+ * - (1) check is given string contains only number ("1234a" = false).
+ * - (2) check if integer overflow/underflow happens. (2747483699 = false).
+ * - If given str passes these cases, then function returns true (test passed)
+ * */
+extern bool		ft_isinteger(char *str);
 
 /* ==========================================================================*
  * |                                                                         |
