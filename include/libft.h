@@ -6,7 +6,7 @@
 /*   By: minkyeki <minkyeki@42SEOUL.KR>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:45:16 by minkyeki          #+#    #+#             */
-/*   Updated: 2022/06/11 15:32:55 by minkyeki         ###   ########.fr       */
+/*   Updated: 2022/06/23 13:18:00 by minkyeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,14 +149,15 @@ extern t_darray	*darray_map_malloc(t_darray *arr, void *(*f)(void *));
  * |        * ft_printf function + additional function                       |
  * |-------------------------------------------------------------------------|
  * |                                                                         |
- * |  NOTE(1)   no description                                               |
+ * |  NOTE(1)   used __attribute__ Compiler format checking                  |
  * |                                                                         |
  * ==========================================================================*/
 
 /* ----------------------------
  * * @PRINTF_MANDATORY
  * - Doesn't support float and additional format specifier. */
-extern int		ft_printf(const char *fmt, ...);
+extern int		ft_printf(const char *fmt, ...)__attribute__(\
+		(format (printf, 1, 2)));
 
 /* ----------------------------
  * * Converts the initial portion of the string pointed by str to int
