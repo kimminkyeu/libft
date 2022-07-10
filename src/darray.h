@@ -6,7 +6,7 @@
 /*   By: minkyeki <minkyeki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 16:24:41 by minkyeki          #+#    #+#             */
-/*   Updated: 2022/04/28 14:53:57 by minkyeki         ###   ########.fr       */
+/*   Updated: 2022/07/10 18:23:00 by minkyeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 # include <stddef.h>
 # include <stdbool.h>
 
-/* ---------------------------
- * * Type define for D-array (Works as same as Linked list in Libft. */
 typedef struct s_darray {
 	size_t		size;
 	size_t		capacity;
@@ -29,7 +27,7 @@ extern void		delete_darray(t_darray **arr_ptr);
 extern void		*new_data_malloc(size_t init_capacity);
 extern void		darray_set_data(t_darray *arr, size_t index, void *data);
 extern void		darray_reset(t_darray *vec);
-extern bool		darray_is_empty(t_darray *vec);
+extern int		darray_is_empty(t_darray *vec);
 extern void		*darray_reserve(t_darray *vec, size_t new_capacity);
 extern void		darray_push_back(t_darray *vec, void *data);
 extern void		darray_pop_back(t_darray *vec);

@@ -6,7 +6,7 @@
 #    By: minkyeki <minkyeki@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/16 15:31:26 by minkyeki          #+#    #+#              #
-#    Updated: 2022/06/11 15:37:44 by minkyeki         ###   ########.fr        #
+#    Updated: 2022/07/10 18:02:56 by minkyeki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,8 @@ SRC3_FILES		= get_next_line get_next_line_utils \
 
 SRC4_FILES		= ft_printf ft_printf_hex ft_printf_info ft_printf_parse ft_printf_spec1 ft_printf_spec2
 
-SRC5_FILES		= darray_create darray_modify darray_iterate
+SRC5_FILES		= darray_create darray_modify darray_iterate \
+				  vector
 
 SRC_BONUS_FILES = ft_lstadd_back ft_lstadd_front ft_lstclear ft_lstdelone \
                   ft_lstiter ft_lstlast ft_lstmap ft_lstnew ft_lstsize
